@@ -1,11 +1,13 @@
 package rpg.classes;
 
 public abstract class ClasseDeCombate {
+	public String nome;
 	private int ataque;
 	private int defesa;
 	private Arma[] arma;
 
-	public ClasseDeCombate(int ataque, int defesa, Arma[] arma) {
+	public ClasseDeCombate(String nome, int ataque, int defesa, Arma[] arma) {
+		this.nome = nome;
 		this.ataque = ataque;
 		this.defesa = defesa;
 		this.arma = arma;
@@ -21,6 +23,10 @@ public abstract class ClasseDeCombate {
 
 	public Arma[] getArma() {
 		return this.arma;
+	}
+	
+	public String getNome() {
+		return this.nome;
 	}
 
 }

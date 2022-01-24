@@ -6,8 +6,8 @@ public class PersonagemJogavel extends PersonagensDeCombate {
 
 		private String nome;
 
-		private Motivacao(String name) {
-			this.nome = name;
+		private Motivacao(String nome) {
+			this.nome = nome;
 		}
 
 		public String getNome() {

@@ -5,7 +5,7 @@ public abstract class PersonagensDeCombate {
 		MASCULINO, FEMININO;
 	}
 
-	private ClasseDeCombate classeDeCombate;
+	public ClasseDeCombate classeDeCombate;
 	private String nome;
 	private Arma arma;
 	private Genero genero;

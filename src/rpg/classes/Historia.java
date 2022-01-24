@@ -29,9 +29,10 @@ public class Historia {
 		Scanner in = new Scanner(System.in);
 		Diversos.limparConsole();
 		Diversos.linhaSeparadora();
-		System.out.println("INFORMAÇÕES DO JOGO: ");
+		System.out.println("PREPARE-SE, O JOGO VAI COMEÇAR ! ");
+		Diversos.linhaSeparadora();
 		System.out.println("Nome do(a) jogador(a): " + this.personagem.getNome());
-		System.out.println("Classe de combate: " + this.personagem.getClasseDeCombate());
+		System.out.println("Classe de combate: " + this.personagem.classeDeCombate.getNome());
 		System.out.println("Arma: " + this.personagem.getArma());
 		System.out.println("Vida: " + this.personagem.getVidaMaxima());
 		System.out.println("Ataque total: " + this.personagem.getAtaqueTotal());
@@ -40,6 +41,8 @@ public class Historia {
 		Diversos.linhaSeparadora();
 		Diversos.continuar();
 		Diversos.limparConsole();
+		Diversos.linhaSeparadora();
+		System.out.println("                                           CAPÍTULO 1");
 		Diversos.linhaSeparadora();
 		System.out.println(
 				"A noite se aproxima, a lua já surge no céu, estrelas vão se acendendo, e sob a luz do crepúsculo você está prestes a entrar na fase final da sua missão.");
@@ -136,6 +139,8 @@ public class Historia {
 			}
 		} while (opcao == 0);
 		Diversos.limparConsole();
+		Diversos.linhaSeparadora();
+		System.out.println("                                           CAPÍTULO 2");
 		Diversos.linhaSeparadora();
 		System.out.println(
 				"Você caminha, atento a todos os seus sentidos, por vários metros, até visualizar a frente uma fonte de luz,");
@@ -258,6 +263,8 @@ public class Historia {
 			}
 		} while (opcao == 0);
 		Diversos.linhaSeparadora();
+		System.out.println("                                           CAPÍTULO 3");
+		Diversos.linhaSeparadora();
 		System.out.println(
 				"Em uma mesa, você encontra uma chave dourada, e sabe que aquela chave abre uma das fechaduras da porta do líder inimigo.");
 		System.out.println("Você pega a chave e guarda numa pequena bolsa que leva presa ao cinto.");
@@ -316,6 +323,8 @@ public class Historia {
 				opcao = 0;
 			}
 		} while (opcao == 0);
+		Diversos.linhaSeparadora();
+		System.out.println("                                           CAPÍTULO 4");
 		Diversos.linhaSeparadora();
 		System.out.println(
 				"Ao lado da porta, você vê uma chave dourada em cima de uma mesa, e sabe que aquela chave abre a outra fechadura da porta do líder inimigo.");
