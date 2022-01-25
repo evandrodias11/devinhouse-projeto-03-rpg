@@ -2,7 +2,7 @@
  
 ## Requisitos da Aplicação
 A aplicação que deverá ser realizada individualmente, deve contemplar os seguintes requisitos
-conforme o roteiro do jogo:
+conforme o roteiro do jogo:\n
 ● O desenvolvimento das mensagens de saída do jogo, esperando pela ação do usuário;
 ● Captura da interação do usuário via entrada padrão;
 ● Criação do sistema automático de combate;
