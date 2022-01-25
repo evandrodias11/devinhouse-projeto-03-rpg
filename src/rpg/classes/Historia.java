@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 import rpg.classes.Combate.VencedorDoCombate;
 import rpg.classes.PersonagemJogavel.Motivacao;
-import rpg.excecao.ExecaoDeGenero;
-import rpg.excecao.ExecaoDeMotivacao;
 
 public class Historia {
 	private final static int NEW_ARMOR = 5;
@@ -26,7 +24,7 @@ public class Historia {
 	}
 
 	public void comecar() {
-		Scanner in = new Scanner(System.in);
+		Scanner entrada = new Scanner(System.in);
 		Diversos.limparConsole();
 		Diversos.linhaSeparadora();
 		System.out.println("PREPARE-SE, O JOGO VAI COMEÇAR ! ");
@@ -63,7 +61,7 @@ public class Historia {
 				for (int i = 0; i < motivacoes.length; i++) {
 					System.out.printf("%d - %s%n", (i + 1), motivacoes[i].getNome());
 				}
-				int opcao = in.nextInt();
+				int opcao = entrada.nextInt();
 				if (opcao > 0 && opcao <= motivacoes.length) {
 					motivacao = motivacoes[opcao - 1]; // índice do array da arma escolhida é opcao - 1
 				} else {
@@ -71,7 +69,7 @@ public class Historia {
 				}
 			} catch (Exception e) {
 				System.out.println("Opção inválida.");
-				in.next();
+				entrada.next();
 			}
 		} while (motivacao == null);
 		this.getPersonagem().setMotivation(motivacao);
@@ -118,7 +116,7 @@ public class Historia {
 				Diversos.linhaSeparadora();
 				System.out.println("1 - Seguir em frente");
 				System.out.println("2 - Desistir");
-				opcao = in.nextInt();
+				opcao = entrada.nextInt();
 				switch (opcao) {
 				case 1:
 					break;
@@ -134,7 +132,7 @@ public class Historia {
 				}
 			} catch (Exception e) {
 				System.out.println("Opção inválida.");
-				in.next();
+				entrada.next();
 				opcao = 0;
 			}
 		} while (opcao == 0);
@@ -153,7 +151,7 @@ public class Historia {
 				System.out.println("1 - Andando cuidadosamente");
 				System.out.println("2 - Correndo");
 				System.out.println("3 - Saltando");
-				opcao = in.nextInt();
+				opcao = entrada.nextInt();
 				switch (opcao) {
 				case 1: {
 					Diversos.limparConsole();
@@ -194,7 +192,7 @@ public class Historia {
 				}
 			} catch (Exception e) {
 				System.out.println("Opção inválida.");
-				in.next();
+				entrada.next();
 				opcao = 0;
 			}
 		} while (opcao == 0);
@@ -230,7 +228,7 @@ public class Historia {
 				Diversos.linhaSeparadora();
 				System.out.println("1 - Pegar armaduras novas");
 				System.out.println("2 - Não pegar armaduras novas");
-				opcao = in.nextInt();
+				opcao = entrada.nextInt();
 				switch (opcao) {
 				case 1: {
 					Diversos.limparConsole();
@@ -258,7 +256,7 @@ public class Historia {
 			} catch (Exception e) {
 				Diversos.linhaSeparadora();
 				System.out.println("Opção inválida.");
-				in.next();
+				entrada.next();
 				opcao = 0;
 			}
 		} while (opcao == 0);
@@ -293,7 +291,7 @@ public class Historia {
 				Diversos.linhaSeparadora();
 				System.out.println("1 - Beber poção");
 				System.out.println("2 - Não beber poção");
-				opcao = in.nextInt();
+				opcao = entrada.nextInt();
 				switch (opcao) {
 				case 1: {
 					Diversos.limparConsole();
@@ -319,7 +317,7 @@ public class Historia {
 			} catch (Exception e) {
 				Diversos.linhaSeparadora();
 				System.out.println("Opção inválida.");
-				in.next();
+				entrada.next();
 				opcao = 0;
 			}
 		} while (opcao == 0);
@@ -344,7 +342,7 @@ public class Historia {
 				Diversos.linhaSeparadora();
 				System.out.println("1 - Iniciar ataque");
 				System.out.println("2 - Esperar");
-				opcao = in.nextInt();
+				opcao = entrada.nextInt();
 				switch (opcao) {
 				case 1: {
 					shouldContinue = entrarEmCombate(this, new OrqueLider(), true);
@@ -363,7 +361,7 @@ public class Historia {
 			} catch (Exception e) {
 				Diversos.linhaSeparadora();
 				System.out.println("Opção inválida.");
-				in.next();
+				entrada.next();
 				opcao = 0;
 			}
 		} while (opcao == 0);
@@ -402,12 +400,9 @@ public class Historia {
 				return false;
 			}
 			return true;
-		} catch (ExecaoDeGenero e) {
-			System.out.println(e.getMessage());
+		} catch (Exception e) {
+			System.out.println("opção inválida");
 			return false;
-		} catch (ExecaoDeMotivacao e) {
-			System.out.println(e.getMessage());
-			return false;
-		}
+		} 
 	}
 }

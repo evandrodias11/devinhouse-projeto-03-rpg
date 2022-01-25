@@ -3,8 +3,6 @@ package rpg.classes;
 import java.util.Scanner;
 
 import rpg.classes.PersonagemJogavel.Motivacao;
-import rpg.excecao.ExecaoDeGenero;
-import rpg.excecao.ExecaoDeMotivacao;
 
 public class Combate {
 	public enum VencedorDoCombate {
@@ -28,7 +26,7 @@ public class Combate {
 		return this.inimigo;
 	}
 
-	public VencedorDoCombate luta(boolean turnoDojogador) throws ExecaoDeGenero, ExecaoDeMotivacao {
+	public VencedorDoCombate luta(boolean turnoDojogador)  {
 		PersonagemJogavel jogador = this.getJogo().getPersonagem();
 		Inimigo inimigo = this.getInimigo();
 		Dado d20 = new Dado20();
@@ -96,12 +94,9 @@ public class Combate {
 					break;
 				}
 				default:
-					throw new ExecaoDeGenero("Gênero do personagem inválido.");
+					System.out.println("opção inválida");;
 				}
-			}
-			default:
-				throw new ExecaoDeMotivacao("Motivação do personagem inválida.");
-			}
+			}}
 			return VencedorDoCombate.INIMIGO;
 		}
 	}

@@ -10,7 +10,7 @@ public class EntradaDeDados {
 	}
 
 	public static Historia criarJogo() {
-		Scanner in = new Scanner(System.in);
+		Scanner entrada = new Scanner(System.in);
 		Diversos.linhaSeparadora();
 		System.out.println("            Seja bem vindo(a) à BATALHA FINAL !");
 		System.out.println("RPG desenvolvido por Evandro Dias no curso DEVinHouse/Senai");
@@ -22,7 +22,7 @@ public class EntradaDeDados {
 				System.out.println("1 - Fácil");
 				System.out.println("2 - Normal");
 				System.out.println("3 - Difícil");
-				int opcao = in.nextInt();
+				int opcao = entrada.nextInt();
 				switch (opcao) {
 				case 1: {
 					nivelDeDificuldade = NivelDificuldade.FACIL;
@@ -42,13 +42,13 @@ public class EntradaDeDados {
 				}
 			} catch (Exception e) {
 				System.out.println("Opção inválida.");
-				in.next();
+				entrada.next();
 			}
 		} while (nivelDeDificuldade == null);
-		in.nextLine();
+		entrada.nextLine();
 		Diversos.linhaSeparadora();
 		System.out.print("Digite o nome do seu personagem: ");
-		String nome = in.nextLine();
+		String nome = entrada.nextLine();
 		Genero genero = null;
 		do {
 			try {
@@ -56,7 +56,7 @@ public class EntradaDeDados {
 				System.out.println("Escolha o gênero do seu personagem:");
 				System.out.println("1 - Masculino");
 				System.out.println("2 - Feminino");
-				int opcao = in.nextInt();
+				int opcao = entrada.nextInt();
 				switch (opcao) {
 				case 1: {
 					genero = Genero.MASCULINO;
@@ -72,7 +72,7 @@ public class EntradaDeDados {
 				}
 			} catch (Exception e) {
 				System.out.println("Opção inválida.");
-				in.next();
+				entrada.next();
 			}
 		} while (genero == null);
 		ClasseDeCombate classeDeCombate = null;
@@ -98,7 +98,7 @@ public class EntradaDeDados {
 					break;
 				}
 				}
-				int opcao = in.nextInt();
+				int opcao = entrada.nextInt();
 				switch (opcao) {
 				case 1: {
 					classeDeCombate = new Lutador();
@@ -118,7 +118,7 @@ public class EntradaDeDados {
 				}
 			} catch (Exception e) {
 				System.out.println("Opção inválida.");
-				in.next();
+				entrada.next();
 			}
 		} while (classeDeCombate == null);
 		int armaEscolhida = -1;
@@ -144,7 +144,7 @@ public class EntradaDeDados {
 				for (int i = 0; i < armasDisponiveis.length; i++) {
 					System.out.printf("%d - %s%n", (i + 1), armasDisponiveis[i]);
 				}
-				int opcao = in.nextInt();
+				int opcao = entrada.nextInt();
 				if (opcao > 0 && opcao <= armasDisponiveis.length) {
 					armaEscolhida = opcao - 1; // índice do array da arma escolhida é - 1
 				} else {
@@ -152,7 +152,7 @@ public class EntradaDeDados {
 				}
 			} catch (Exception e) {
 				System.out.println("Opção inválida.");
-				in.next();
+				entrada.next();
 			}
 		} while (armaEscolhida == -1);
 		PersonagemJogavel personagem = new PersonagemJogavel(classeDeCombate, armaEscolhida, nome, genero);
