@@ -397,8 +397,8 @@ public class Historia {
 	private boolean entrarEmCombate(Historia jogo, Inimigo inimigo, boolean iniciativaJogador) {
 		Combate combate = new Combate(jogo, inimigo);
 		try {
-			VencedorDoCombate winner = combate.luta(iniciativaJogador);
-			if (winner == VencedorDoCombate.INIMIGO) {
+			VencedorDoCombate vencedor = combate.luta(iniciativaJogador);
+			if (vencedor == VencedorDoCombate.INIMIGO) {
 				return false;
 			}
 			return true;

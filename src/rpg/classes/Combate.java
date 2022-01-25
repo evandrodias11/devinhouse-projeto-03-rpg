@@ -133,9 +133,7 @@ public class Combate {
 
 	private void acertoDanoNormal(PersonagensDeCombate atacante, PersonagensDeCombate defensor, int rolagemDado,
 			NivelDificuldade nivelDeDificuldade) {
-		int dano = this.acertoDano(atacante, defensor, defensor.getDefesaTotal(), rolagemDado, nivelDeDificuldade); // considers
-																													// defender's
-																													// defense
+		int dano = this.acertoDano(atacante, defensor, defensor.getDefesaTotal(), rolagemDado, nivelDeDificuldade); 
 		Diversos.linhaSeparadora();
 		System.out.printf("%s atacou %s! %s sofreu %d de dano e agora possui %d pontos de vida.%n", atacante.getNome(),
 				atacante.getArma().textoAtaque(), defensor.getNome(), dano, defensor.getVidaAtual());
